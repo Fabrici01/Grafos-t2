@@ -35,6 +35,7 @@ int main(int argc, char *argv[]) {
     
     fclose(arquivo);
 
+    //Algoritmo de Dijkstra
     int predecessor[vertices], distancia[vertices], visitado[vertices];
 
     for (int i = 0; i < vertices; i++) {
@@ -87,7 +88,7 @@ int minimaDistancia(int distancia[], int vertices, int visitado[]) {
     int i = -1;
 
     for (int j = 0; j < vertices; j++) {
-        if (visitado[j] == 0 && distancia[j] <= min) {
+        if (!visitado[j] && distancia[j] < min) {
             min = distancia[j];
             i = j;
         }
